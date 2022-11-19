@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "removeComments": true,
+    "lib": ["ES2022",],
+    "target": "ES2022",
+    "module": "Node16",
+    "moduleResolution": "Node",
+    "types": ["node"],
+    "strict": true,
+  },
+  "exclude": ["node_modules"]
+}
