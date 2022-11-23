@@ -1,24 +1,20 @@
-import Fastify from "fastify";
+import { server } from "./server";
+const PORT = process.env.PORT || 8080;
 
-const app = Fastify({
-  logger: true,
-});
-const PORT = (process.env.PORT || 8080) as number;
-
-app.get("/", async (request, reply) => {
+server.get("/", async (request, reply) => {
   reply.send({
     msg: "Deployed successfully",
   });
 });
 
-const start = async () => {
+async function start(): Promise<void> {
   try {
-    await app.listen({ port: PORT, host: "0.0.0.0" });
-    app.log.info(`Server started at ${PORT}`);
+    await server.listen({ port: Number(PORT), host: "0.0.0.0" });
+    server.log.info(`Server started at ${PORT}`);
   } catch (err) {
-    app.log.error(err);
+    server.log.error(err);
     process.exit(1);
   }
-};
+}
 
 start();
