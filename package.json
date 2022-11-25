@@ -9,7 +9,9 @@
   "scripts": {
     "start:dev": "tsx watch src",
     "start:build": "rimraf build && tsx esbuild.ts",
-    "start:prod": "npm run start:build && node dist"
+    "start:prd": "npm run start:build && node dist",
+    "lint:format": "prettier --write src",
+    "lint:fix": "prettier --check src && eslint --ignore-path .gitignore ."
   },
   "keywords": [],
   "author": "",

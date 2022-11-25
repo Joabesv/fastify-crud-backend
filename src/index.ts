@@ -1,15 +1,10 @@
-import { server } from "./server";
-const PORT = process.env.PORT || 8080;
+import { server } from './server';
 
-server.get("/", async (request, reply) => {
-  reply.send({
-    msg: "Deployed successfully",
-  });
-});
+const PORT = process.env.PORT ?? 8080;
 
 async function start(): Promise<void> {
   try {
-    await server.listen({ port: Number(PORT), host: "0.0.0.0" });
+    await server.listen({ port: Number(PORT), host: '0.0.0.0' });
     server.log.info(`Server started at ${PORT}`);
   } catch (err) {
     server.log.error(err);
@@ -17,4 +12,5 @@ async function start(): Promise<void> {
   }
 }
 
+/* eslint-disable-next-line */
 start();
