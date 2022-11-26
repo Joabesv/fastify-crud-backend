@@ -11,7 +11,9 @@
     "start:build": "rimraf build && tsx esbuild.ts",
     "start:prd": "npm run start:build && node dist",
     "lint:format": "prettier --write src",
-    "lint:fix": "prettier --check src && eslint --ignore-path .gitignore ."
+    "lint:fix": "prettier --check src && eslint --ignore-path .gitignore .",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +28,7 @@
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.44.0",
+    "@vitest/ui": "^0.25.3",
     "esbuild": "^0.15.14",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.5.0",
@@ -38,6 +41,7 @@
     "rimraf": "^3.0.2",
     "tiny-glob": "^0.2.9",
     "tsx": "^3.12.1",
-    "typescript": "*"
+    "typescript": "*",
+    "vitest": "^0.25.3"
   }
 }
