@@ -12,6 +12,11 @@
         "project": "./tsconfig.json"
     },
     "rules": {
-      "@typescript-eslint/return-await": "off"
+      "@typescript-eslint/return-await": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
+      "@typescript-eslint/no-unnecessary-condition": "warn",
+      "@typescript-eslint/prefer-optional-chain": "warn",
+      "@typescript-eslint/prefer-nullish-coalescing": "error",
+      "@typescript-eslint/no-inferrable-types": "error"
     }
 }
