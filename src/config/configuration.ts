@@ -1,5 +1,6 @@
 import { EnvSchemaData, EnvSchemaOpt, envSchema } from 'env-schema';
 import S from 'fluent-json-schema';
+import { Level } from 'pino';
 
 const configSchema = S.object()
   .required([
@@ -9,7 +10,7 @@ const configSchema = S.object()
     'DATABASE_ENV',
     'DATABASE_URL',
   ])
-  .prop('PORT', S.string().default(3000))
+  .prop('PORT', S.number().default(3000))
   .prop(
     'LOG_LEVEL',
     S.string().enum(['debug', 'info', 'error']).default('info')
@@ -20,6 +21,15 @@ const configSchema = S.object()
     S.string().enum(['development', 'production']).default('development')
   )
   .prop('DATABASE_URL', S.string());
+
+// there's probably a better way to do this
+export interface configProps {
+  PORT: number;
+  LOG_LEVEL: Level;
+  LOG_PRETTY_PRINT: boolean;
+  DATABASE_ENV: string;
+  DATABASE_URL: string;
+}
 
 export function buildConfig(): EnvSchemaData {
   const envSchemaOptions: EnvSchemaOpt = {
