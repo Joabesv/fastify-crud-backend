@@ -1,5 +1,5 @@
-import glob from 'tiny-glob';
 import { build } from 'esbuild';
+import glob from 'tiny-glob';
 
 (async () => {
   const entryPoints = await glob('src/**/*.ts');
