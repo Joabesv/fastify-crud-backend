@@ -7,7 +7,9 @@ Any help is welcome!
 
 - create a new file `.env` and fill it with the `.env.example` content
 
-- pnpm start:dev
+- run `pnpm start:db` to create docker container with mongodb
+
+- after those steps, start the dev server `pnpm start:dev`
 
 see the api on http://localhost:3000
 
