@@ -10,6 +10,8 @@
     "start:dev": "tsx watch src",
     "start:build": "rimraf build && tsx esbuild.ts",
     "start:prd": "npm run start:build && node dist",
+    "start:db": "docker run --rm -d -p 27017:27017 --name fastify-mongo mongo:4",
+    "stop:db": "docker stop fastify-mongo",
     "lint:format": "prettier --write src",
     "lint:fix": "prettier --check src && eslint --ignore-path .gitignore .",
     "test": "vitest",
@@ -20,9 +22,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^4.10.0",
     "@fastify/autoload": "^5.5.0",
+    "@fastify/mongodb": "^6.2.0",
     "@fastify/sensible": "^5.1.1",
+    "fastify": "^4.10.0",
     "fastify-plugin": "^4.3.0"
   },
   "devDependencies": {

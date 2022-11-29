@@ -9,7 +9,7 @@ const sensiblePlugin: SensiblePluginType = async (fastify, opts) => {
     await fastify.register(import('@fastify/sensible'));
     fastify.log.info('Successfully registered sensiblePlugin');
   } catch (err) {
-    fastify.log.error('Plugin: Sensible, error on register');
+    fastify.log.error('Plugin: Sensible, error on register', err);
   }
 };
 

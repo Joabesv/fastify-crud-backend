@@ -6,7 +6,7 @@ const root: FastifyPluginAsync = async (fastify, opts) => {
   fastify.get('/', async (request, reply) => {
     try {
       log.info('root route is working');
-      return reply.code(200).send({ msg: 'Welcome to my deploy on fly' });
+      return reply.code(200).send({ msg: 'Welcome to my fastify-crud' });
     } catch (error) {
       log.error('[Error root route]', error);
     }
