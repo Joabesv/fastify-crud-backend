@@ -14,8 +14,8 @@ Any help is welcome!
 see the api on http://localhost:3000
 
 ### MongoDB
-- [] create connection with MongoDB
-- [] create user model
+- [x] create connection with MongoDB
+- [x] create user model
 
 ### APIs
 - [] GET user
