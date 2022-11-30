@@ -9,7 +9,14 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "types": ["node"],
-    "strict": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
+    "useUnknownInCatchVariables": true,
+    "noImplicitThis": false
   },
   "exclude": ["node_modules"]
 }
