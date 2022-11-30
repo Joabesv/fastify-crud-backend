@@ -7,6 +7,7 @@ export const configSchema = S.object()
     'LOG_PRETTY_PRINT',
     'DATABASE_ENV',
     'DATABASE_URL',
+    'JWT_SECRET',
   ])
   .prop('PORT', S.number().default(3000))
   .prop(
@@ -18,4 +19,6 @@ export const configSchema = S.object()
     'DATABASE_ENVIRONMENT',
     S.string().enum(['development', 'production']).default('development')
   )
-  .prop('DATABASE_URL', S.string());
+  .prop('DATABASE_URL', S.string())
+  // ask for review about Secret possible types
+  .prop('JWT_SECRET', S.string());

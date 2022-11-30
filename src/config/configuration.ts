@@ -9,6 +9,7 @@ export interface configProps {
   LOG_PRETTY_PRINT: boolean;
   DATABASE_ENV: string;
   DATABASE_URL: string;
+  JWT_SECRET: string;
 }
 
 export function buildConfig(): EnvSchemaData {
