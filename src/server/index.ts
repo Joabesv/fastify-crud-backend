@@ -4,7 +4,9 @@ import { join } from 'node:path';
 import { buildConfig, configProps } from '../config/configuration';
 import { prettyLog } from '../utils/prettyLog';
 
-type decoratedFastifyInstance = FastifyInstance & { config?: configProps };
+type decoratedFastifyInstance = FastifyInstance & {
+  config?: configProps;
+};
 
 export async function buildServer(): Promise<decoratedFastifyInstance> {
   const config = buildConfig();
