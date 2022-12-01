@@ -1,4 +1,5 @@
 import AutoLoad from '@fastify/autoload';
+import { JWT } from '@fastify/jwt';
 import Fastify, { FastifyInstance } from 'fastify';
 import { join } from 'node:path';
 import { buildConfig, configProps } from '../config/configuration';
@@ -6,6 +7,7 @@ import { prettyLog } from '../utils/prettyLog';
 
 type decoratedFastifyInstance = FastifyInstance & {
   config?: configProps;
+  jwt?: JWT;
 };
 
 export async function buildServer(): Promise<decoratedFastifyInstance> {
