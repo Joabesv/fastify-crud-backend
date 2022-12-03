@@ -13,7 +13,7 @@
     "start:db": "docker run --rm -d -p 27017:27017 --name fastify-mongo mongo:4",
     "stop:db": "docker stop fastify-mongo",
     "lint:format": "prettier --write src",
-    "lint:fix": "prettier --check src && eslint --ignore-path .gitignore .",
+    "lint:fix": "prettier --check src && eslint --fix --ignore-path .gitignore .",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage"
@@ -50,6 +50,8 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
     "fluent-json-schema": "^4.0.0",
+    "graphql": "^16.6.0",
+    "graphql-relay": "^0.10.0",
     "pino": "^8.7.0",
     "pino-pretty": "^9.1.1",
     "prettier": "^2.8.0",
