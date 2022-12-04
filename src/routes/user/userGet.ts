@@ -15,14 +15,14 @@ export async function userGet(
 ): Promise<void> {
   const { userId } = request.params;
   const serverInstance = await buildServer();
-
+  console.log(request.params);
   try {
     if (!userId) {
       reply.badRequest('You must provide an id');
       return;
     }
     const { user, error } = await getUserApi(userId);
-    if (error !== null) {
+    if (error) {
       await reply.status(400).send(error);
       return;
     }
