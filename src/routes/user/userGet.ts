@@ -15,7 +15,6 @@ export async function userGet(
 ): Promise<void> {
   const { userId } = request.params;
   const serverInstance = await buildServer();
-  console.log(request.params);
   try {
     if (!userId) {
       reply.badRequest('You must provide an id');
