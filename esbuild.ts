@@ -9,6 +9,7 @@ import glob from 'tiny-glob';
     logLevel: 'info',
     outdir: 'dist',
     platform: 'node',
+    minify: true,
     format: 'cjs',
     sourcemap: true,
   });

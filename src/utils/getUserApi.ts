@@ -24,7 +24,7 @@ type GetConditionsOutput = {
 };
 
 const getConditions = (id?: string, email?: string): GetConditionsOutput => {
-  if (id !== undefined) {
+  if (id) {
     return {
       error: null,
       conditions: {
@@ -33,7 +33,7 @@ const getConditions = (id?: string, email?: string): GetConditionsOutput => {
     };
   }
 
-  if (email !== undefined) {
+  if (email) {
     return {
       error: null,
       conditions: {
@@ -53,7 +53,7 @@ export async function getUserApi(
 ): Promise<GetUserApiPayload> {
   const { error, conditions } = getConditions(id, email);
 
-  if (error !== null) {
+  if (error) {
     return {
       error,
       user: null,
@@ -66,7 +66,7 @@ export async function getUserApi(
     .select(userSelection)
     .lean();
 
-  if (user === null) {
+  if (user) {
     return {
       error: 'User not found',
       user: null,

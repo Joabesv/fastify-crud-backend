@@ -1,6 +1,6 @@
 import { compareSync, hashSync } from 'bcryptjs';
 import { Document, Model, model } from 'mongoose';
-import { UserSchema } from './schemas/userSchema';
+import { UserSchema } from './schemas/userMongoSchema';
 
 export interface IUser extends Document {
   name: string;
