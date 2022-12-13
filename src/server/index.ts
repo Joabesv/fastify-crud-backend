@@ -1,8 +1,8 @@
 import AutoLoad from '@fastify/autoload';
 import { JWT } from '@fastify/jwt';
 import Fastify, { FastifyInstance } from 'fastify';
-import { join } from 'node:path';
 import { Mongoose } from 'mongoose';
+import { join } from 'node:path';
 import { buildConfig, configProps } from '../config/configuration';
 import { prettyLog } from '../utils/prettyLog';
 
