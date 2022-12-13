@@ -1,7 +1,9 @@
 import type { FastifyReply, FastifyRequest } from 'fastify';
-import { generateToken } from '../auth/generateToken';
-import { UserModel } from '../models/UserModel';
-import { Body } from '../models/schemas/loginSchema';
+import { generateToken } from '../../auth/generateToken';
+import { UserModel } from '../../models/UserModel';
+import { Body } from '../../models/schemas/loginSchema';
+
+export const autoPrefix = '/api/auth/login';
 
 export async function authLogin(
   request: FastifyRequest<{ Body: Body }>,
