@@ -3,7 +3,7 @@ import { UserModel } from '../models/UserModel';
 import { UserPayload } from '../routes/user/userGet';
 import { getObjectId } from './getObjectId';
 
-const userSelection = {
+export const userSelection = {
   _id: 1,
   name: 1,
   email: 1,

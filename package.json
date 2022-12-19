@@ -9,7 +9,7 @@
   "scripts": {
     "start:dev": "tsx watch src",
     "start:build": "rimraf build && tsx esbuild.ts",
-    "start:prd": "npm run start:build && node dist",
+    "start:prod": "npm run start:build && node dist",
     "start:db": "docker run --rm -d -p 27017:27017 --name fastify-mongo mongo:4",
     "stop:db": "docker stop fastify-mongo",
     "lint:format": "prettier --write src",

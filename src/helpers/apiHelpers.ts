@@ -57,7 +57,7 @@ type PageInfo = {
 };
 
 // TODO: fix typing
-type Query = {
+export type Query = {
   skip: any;
   limit: any;
 };
