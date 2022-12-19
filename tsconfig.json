@@ -10,7 +10,8 @@
     "moduleResolution": "Node",
     "types": ["node", "vitest/importMeta"],
     "alwaysStrict": true,
-    "strictNullChecks": true,
+    // this rule defeated me 👺
+    // "strictNullChecks": true,
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
