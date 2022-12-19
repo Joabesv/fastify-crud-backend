@@ -1,7 +1,7 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
+import { Params } from '../../models/schemas/userSchema';
 import { buildServer } from '../../server/';
 import { getUserApi } from '../../utils/getUserApi';
-import { Params } from './userSchema';
 
 export type UserPayload = {
   _id: string;
