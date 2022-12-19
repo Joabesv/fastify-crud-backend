@@ -1,3 +1,4 @@
+// gotta rename this part
 import { FromSchema } from 'json-schema-to-ts';
 
 const paramsSchema = {
