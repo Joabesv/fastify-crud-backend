@@ -15,7 +15,8 @@
       "@typescript-eslint/return-await": "off",
       "@typescript-eslint/restrict-template-expressions": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
-      "@typescript-eslint/strict-boolean-expressions": "warn",
+      // the most UNBEARABLE rule of Eslint
+      "@typescript-eslint/strict-boolean-expressions": "off",
       "@typescript-eslint/no-unnecessary-condition": "warn",
       "@typescript-eslint/prefer-optional-chain": "warn",
       "@typescript-eslint/prefer-nullish-coalescing": "error",

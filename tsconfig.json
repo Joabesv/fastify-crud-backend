@@ -11,7 +11,7 @@
     "types": ["node", "vitest/importMeta"],
     "alwaysStrict": true,
     // this rule defeated me 👺
-    // "strictNullChecks": true,
+    "strictNullChecks": true,
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,

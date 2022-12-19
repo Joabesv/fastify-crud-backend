@@ -12,8 +12,8 @@
     "start:prod": "npm run start:build && node dist",
     "start:db": "docker run --rm -d -p 27017:27017 --name fastify-mongo mongo:4",
     "stop:db": "docker stop fastify-mongo",
-    "lint:format": "prettier --write src",
-    "lint:fix": "prettier --check src && eslint --fix --ignore-path .gitignore .",
+    "lint:format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage"
