@@ -18,8 +18,8 @@ see the api on http://localhost:3000
 - [x] create user model
 
 ### APIs
-- [] GET user
-- [] GET ALL create user
+- [x] GET user
+- [x] GET ALL create user
 - [] POST user https://github.com/daniloab/koa-crud-backend/issues/10
   - [] implement body values validation with zod maybe;
   - [] create new user if valid
