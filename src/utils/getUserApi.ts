@@ -48,7 +48,7 @@ const getConditions = (id?: string, email?: string): GetConditionsOutput => {
 };
 
 export async function getUserApi(
-  id?: string,
+  id?: string | null,
   email?: string
 ): Promise<GetUserApiPayload> {
   const { error, conditions } = getConditions(id, email);

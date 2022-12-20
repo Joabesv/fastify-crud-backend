@@ -16,7 +16,7 @@ const userRegisterSchema = z
 
 export async function validateUserApi(
   apiUser: ApiUser
-): Promise<{ error: unknown; user: ApiUser }> {
+): Promise<{ error: unknown; user: ApiUser | null }> {
   try {
     await userRegisterSchema.parseAsync(apiUser);
   } catch (err) {
