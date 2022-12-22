@@ -1,4 +1,5 @@
 import type { FastifyInstance } from 'fastify';
+import { userDelete } from './userDelete';
 import { userGet } from './userGet';
 import { userGetAll } from './userGetAll';
 import { userPost } from './userPost';
@@ -11,4 +12,5 @@ export default async (fastify: FastifyInstance): Promise<void> => {
   fastify.post('/', userPost);
   fastify.get('/', userGetAll);
   fastify.get('/:id', userGet);
+  fastify.delete('/:id', userDelete);
 };

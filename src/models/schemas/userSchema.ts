@@ -3,7 +3,7 @@ import { FromSchema } from 'json-schema-to-ts';
 
 const paramsSchema = {
   type: 'object',
-  required: ['userId'],
+  required: ['id'],
   properties: {
     id: { type: 'string' },
   },

@@ -1,6 +1,7 @@
 import type { FastifyRequest } from 'fastify';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { IUser } from '../models/UserModel';
+import { getObjectId } from '../utils/getObjectId';
 
 type SkipAndLimit = {
   skip: null | number;
@@ -94,4 +95,11 @@ export async function getPageInfo(
     hasPreviousPage,
     hasNextPage,
   };
+}
+
+export function checkObjectId(id: string): Types.ObjectId | null {
+  const isObjectIdNotValid = !Types.ObjectId.isValid(id);
+  if (isObjectIdNotValid) return null;
+
+  return getObjectId(id);
 }
