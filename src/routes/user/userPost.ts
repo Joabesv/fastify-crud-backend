@@ -1,13 +1,14 @@
 import type { FastifyReply, FastifyRequest } from 'fastify';
 import { UserModel } from '../../models/UserModel';
+import { UserRegistrationBody } from '../../models/schemas/userSchema';
 import { getUserApi } from '../../utils/getUserApi';
 import { validateUserApi } from '../../utils/validateUserApi';
 
 export async function userPost(
-  request: FastifyRequest,
+  request: FastifyRequest<{ Body: UserRegistrationBody }>,
   reply: FastifyReply
 ): Promise<void> {
-  const { user = null } = request.body;
+  const { user } = request.body;
 
   if (!user) {
     return reply.badRequest('User is required');

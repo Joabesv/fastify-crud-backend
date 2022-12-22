@@ -66,7 +66,7 @@ export async function getUserApi(
     .select(userSelection)
     .lean();
 
-  if (user) {
+  if (!user) {
     return {
       error: 'User not found',
       user: null,
