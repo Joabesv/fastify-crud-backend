@@ -1,6 +1,6 @@
 import { compareSync, hashSync } from 'bcryptjs';
 import { Document, Model, model } from 'mongoose';
-import { UserSchema } from './schemas/userSchema';
+import { UserSchema } from './schemas/userMongoSchema';
 
 export interface IUser extends Document {
   name: string;
@@ -14,7 +14,7 @@ export interface IUser extends Document {
 }
 
 // will try to translate to fastify-hooks
-// i hate using this and ts, this shouldn't be this messy
+// i hate using `this` and ts, shouldn't be this messy
 UserSchema.pre<IUser>('save', function encryptPasswordHook(next) {
   if (this.isModified('password')) {
     this.password = this.encryptPassword(this.password);

@@ -8,8 +8,9 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "types": ["node"],
+    "types": ["node", "vitest/importMeta"],
     "alwaysStrict": true,
+    // this rule defeated me 👺
     "strictNullChecks": true,
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
@@ -18,5 +19,5 @@
     "useUnknownInCatchVariables": true,
     "noImplicitThis": false
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }

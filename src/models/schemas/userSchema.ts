@@ -1,33 +1,30 @@
-import { Schema } from 'mongoose';
+// gotta rename this part
+import { FromSchema } from 'json-schema-to-ts';
 
-export const UserSchema = new Schema(
-  {
-    name: {
-      type: String,
-      required: true,
-    },
-    email: {
-      type: String,
-      required: true,
-      index: true,
-    },
-    password: {
-      type: String,
-      hidden: true,
-    },
-    removedAt: {
-      type: Date,
-      index: true,
-      default: null,
+const paramsSchema = {
+  type: 'object',
+  required: ['id'],
+  properties: {
+    id: { type: 'string' },
+  },
+} as const;
 
-      es_indexed: true,
+export type Params = FromSchema<typeof paramsSchema>;
+
+const bodyUserSchema = {
+  type: 'object',
+  properties: {
+    user: {
+      type: 'object',
+      properties: {
+        name: { type: 'string' },
+        email: { type: 'string' },
+        password: { type: 'string' },
+      },
+      required: ['name', 'email', 'password'],
     },
   },
-  {
-    timestamps: {
-      createdAt: 'createdAt',
-      updatedAt: 'updatedAt',
-    },
-    collection: 'User',
-  }
-);
+  required: ['user'],
+} as const;
+
+export type UserRegistrationBody = FromSchema<typeof bodyUserSchema>;
