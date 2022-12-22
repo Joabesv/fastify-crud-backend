@@ -13,16 +13,17 @@ export async function userGet(
   request: FastifyRequest<{ Params: Params }>,
   reply: FastifyReply
 ): Promise<void> {
-  const { userId } = request.params;
+  const { id } = request.params;
   const serverInstance = await buildServer();
   try {
-    if (!userId) {
+    if (!id) {
       reply.badRequest('You must provide an id');
       return;
     }
-    const { user, error } = await getUserApi(userId);
+    const { user, error } = await getUserApi(id);
+
     if (error) {
-      await reply.status(400).send(error);
+      reply.badRequest(error);
       return;
     }
 

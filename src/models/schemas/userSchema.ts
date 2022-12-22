@@ -5,7 +5,7 @@ const paramsSchema = {
   type: 'object',
   required: ['userId'],
   properties: {
-    userId: { type: 'string' },
+    id: { type: 'string' },
   },
 } as const;
 
