@@ -24,7 +24,7 @@ see the api on http://localhost:3000
   - [x] implement body values validation with zod maybe;
   - [x] create new user if valid
   - [x] validate if user exists and return
-- [] DELETE user
+- [x] DELETE user
 
 ### Auth Flow
 - [] login
