@@ -20,10 +20,10 @@ see the api on http://localhost:3000
 ### APIs
 - [x] GET user
 - [x] GET ALL create user
-- [] POST user https://github.com/daniloab/koa-crud-backend/issues/10
-  - [] implement body values validation with zod maybe;
-  - [] create new user if valid
-  - [] validate if user exists and return
+- [x] POST user https://github.com/daniloab/koa-crud-backend/issues/10
+  - [x] implement body values validation with zod maybe;
+  - [x] create new user if valid
+  - [x] validate if user exists and return
 - [] DELETE user
 
 ### Auth Flow
