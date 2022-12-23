@@ -24,8 +24,10 @@ export async function authLogin(
   if (!user) {
     return reply.notFound('User not found');
   }
+  const token = await generateToken(user);
+
   return reply.code(200).send({
     message: 'User authenticate with success',
-    token: generateToken(user),
+    token,
   });
 }
