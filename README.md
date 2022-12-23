@@ -27,7 +27,7 @@ see the api on http://localhost:3000
 - [x] DELETE user
 
 ### Auth Flow
-- [] login
+- [x] login
 - [] validate user token
 - [] sign up
 
