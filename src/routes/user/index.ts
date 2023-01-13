@@ -10,7 +10,7 @@ export const autoPrefix = '/api/user';
 
 export default async (fastify: FastifyInstance): Promise<void> => {
   fastify.post('/', userPost);
-  fastify.get('/', userGetAll);
-  fastify.get('/:id', userGet);
-  fastify.delete('/:id', userDelete);
+  fastify.get('/', { onRequest: fastify.authenticate }, userGetAll);
+  fastify.get('/:id', { onRequest: fastify.authenticate }, userGet);
+  fastify.delete('/:id', { onRequest: fastify.authenticate }, userDelete);
 };

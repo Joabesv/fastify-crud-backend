@@ -3,16 +3,14 @@ import { generateToken } from '../../auth/generateToken';
 import { UserModel } from '../../models/UserModel';
 import { Body } from '../../models/schemas/loginSchema';
 
-export const autoPrefix = '/api/auth/login';
-
 export async function authLogin(
   request: FastifyRequest<{ Body: Body }>,
   reply: FastifyReply
 ): Promise<void> {
   const { email, password } = request.body;
-  const isEmailAndPwdValid = !email || !password;
+  const isEmailAndPasswordNotValid = !email || !password;
 
-  if (isEmailAndPwdValid) {
+  if (isEmailAndPasswordNotValid) {
     return reply.unauthorized('Email or password incorrect');
   }
 

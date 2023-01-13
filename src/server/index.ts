@@ -20,18 +20,15 @@ export async function buildServer(): Promise<DecoratedFastifyInstance> {
       transport: prettyLog,
     },
   });
-  const pluginsToRegister = [
-    fastify.register(AutoLoad, {
-      dir: join(__dirname, '../plugins'),
-    }),
-    fastify.register(AutoLoad, {
-      dir: join(__dirname, '../routes'),
-    }),
-  ];
 
   try {
     fastify.decorate('config', config);
-    await Promise.allSettled(pluginsToRegister);
+    await fastify.register(AutoLoad, {
+      dir: join(__dirname, '../plugins'),
+    });
+    await fastify.register(AutoLoad, {
+      dir: join(__dirname, '../routes'),
+    });
     fastify.log.info('Registered all plugins!!');
   } catch (error) {
     fastify.log.error('Error registering plugins', error);

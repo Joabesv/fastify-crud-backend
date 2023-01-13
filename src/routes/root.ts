@@ -1,5 +1,4 @@
 import type { FastifyPluginAsync } from 'fastify';
-import { generateToken } from '../auth/generateToken';
 
 const root: FastifyPluginAsync = async (fastify, opts) => {
   const { log } = fastify;
